@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACE EVENT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <img src="go.jpeg" alt="Logo" style="height: 50px; width: auto;">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+
+    <div id="home" class="content">
+        <h1 id="about">ABOUT US:</h1>
+        <center>
+        <p><b>ACE</b><br> a place where a student discovers their hidden talents,
+             gets rid of all sorts of inhibitions, sets up, and creates a new 
+             history every year. ACE strives for synchronization between academic 
+             learning and recent development in technology and industry.
+        </p> 
+        <p>ACE is run by the students and for the students to nurture their creativity and wholesome personality. ACE extracts the best out of every student, because of the laudable efforts by the students under the able guidance of the faculty and staff. ACE provides avenues for developing technical skills, updating knowledge on state-of-the-art subjects, enhancing personality & service to the department, and of course, to the computer society. The activities undertaken by ACE include conducting seminars & workshops, special lectures by eminent speakers, paper presentations, quizzes, debates, intra-department contests, & imparting practical skills.
+        </p>
+        </center>
+    </div>
+
+    <h1 class="eve_title">EVENT:</h1>
+    <div class="slideshow-container">
+        <div class="slides">
+            <img src="HACKER.jpg" alt="Slide 1">
+        </div>
+        <div class="slides">
+            <img src="IMG 2.jpg" alt="Slide 2">
+        </div>
+        <div class="slides">
+            <img src="WhatsApp Image 2024-07-22 at 22.01.59_62a6b630.jpg" alt="Slide 3">
+        </div>
+        <a class="prev" onclick="changeSlides(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlides(1)">&#10095;</a>
+    </div>
+    
+    <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+
+    <div id="contact" class="content">
+        <h1>Contact Us</h1>
+        <p>Phone: 9363134403</p>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block"; 
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+
+    <div class="posting">
+        <p>President:</p>
+        <p>"Srilekha"</p><br>
+        <p>vice-president:</p>
+        <p>"vishnuvardan"</p>
+        <p>"sahana"</p>
+        <p>"naafiah"</p><br>
+        <a href="https://www.instagram.com/acesvce?igsh=NTZpZDEwbDVyMGUz"><img class="instagram" src="instagram-png.png"> </a>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Gowtham. All rights reserved.
+    </div>
+</body>
+</html>
